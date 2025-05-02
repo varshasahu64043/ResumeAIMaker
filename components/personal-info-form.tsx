@@ -26,9 +26,10 @@ export default function PersonalInfoForm({ data, updateData }: PersonalInfoFormP
   const [formData, setFormData] = useState<PersonalInfo>(data)
 
   useEffect(() => {
-    // Update parent component when form data changes
-    updateData(formData)
-  }, [formData, updateData])
+    if (JSON.stringify(formData) !== JSON.stringify(data)) {
+      updateData(formData);
+    }
+  }, [formData]);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target

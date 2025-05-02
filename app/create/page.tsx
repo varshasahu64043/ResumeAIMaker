@@ -1,6 +1,6 @@
 "use client"
 
-import { useState } from "react"
+import { useState} from "react"
 import { useRouter } from "next/navigation"
 import { Button } from "@/components/ui/button"
 import { Card } from "@/components/ui/card"
@@ -38,13 +38,16 @@ export default function CreateResume() {
     projects: [],
     certifications: [],
   })
-
+ 
   const updateResumeData = (section: string, data: any) => {
     setResumeData((prev) => ({
       ...prev,
       [section]: data,
     }))
   }
+ 
+
+
 
   const handleNext = () => {
     const tabs = ["personal", "education", "experience", "skills", "projects", "certifications"]

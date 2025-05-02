@@ -27,6 +27,7 @@ export default function PreviewResume() {
     }
   }, [router])
 
+    
   const handleEnhanceWithAI = async () => {
     if (!resumeData) return
 
@@ -38,7 +39,7 @@ export default function PreviewResume() {
         title: "Resume Enhanced",
         description: "Your resume has been improved with AI suggestions.",
       })
-    } catch (error) {
+    } catch {
       toast({
         title: "Enhancement Failed",
         description: "There was an error enhancing your resume. Please try again.",
